@@ -1,0 +1,15 @@
+---
+- hosts: webserver
+  gather_facts: no
+  tasks: 
+    - name: This is my first task
+      file:
+        path: "{{ my_demo_folder_path }}"
+        state: directory
+        owner: ec2-user
+  
+    - name: my file
+      file:
+        path: "{{ my_demo_folder_path }}/new_file.txt"
+        state: touch
+        
